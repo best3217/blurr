@@ -46,8 +46,11 @@
                 <img src="./assets/img/Rectangle2.png" alt="Rectangle2" class="w-full">
               </div>
               <div>
-                <div class="overflow-hidden">
-                  <span class="title flex gap-3 text-primary-500 text-base items-center wow rollIn"><i></i>Nati con la voglia di creare il nuovo</span>
+                <div class="title flex gap-3 text-primary-500 text-base items-center overflow-hidden">
+                  <span>
+                    <i></i>
+                    Nati con la voglia di creare il nuovo
+                  </span>
                 </div>
                 <div class="overflow-hidden">
                   <h1 class="font-medium text-primary-500 leading-[2rem] md:leading-12 mt-6">
@@ -65,8 +68,11 @@
           </section>
 
           <section id="section3">
-            <div class="overflow-hidden">
-              <span class="title flex gap-3 text-primary-500 text-base items-center"><i></i>Nati con la voglia di creare il nuovo</span>
+            <div class="title flex gap-3 text-primary-500 text-base items-center overflow-hidden">
+              <span>
+                <i></i>
+                Nati con la voglia di creare il nuovo
+              </span>
             </div>
             
             <div class="grid sm:grid-cols-2 gap-10 md:gap-20 mt-6">
@@ -88,8 +94,11 @@
 
           <section>
             <div class="sm:w-3/4 mx-auto">
-              <div class="overflow-hidden">
-                <span class="title flex gap-3 text-primary-500 text-base items-center"><i></i>Come possiamo aiutarti</span>
+              <div class="title flex gap-3 text-primary-500 text-base items-center overflow-hidden">
+                <span>
+                  <i></i>
+                  Come possiamo aiutarti
+                </span>
               </div>
               <div class="overflow-hidden">
                 <h1 class="font-medium text-primary-500 leading-[2rem] md:leading-12 mt-6">Ci siamo verticalizzati sulla creazione di siti web in Wordpress e Custom, la nostra esperienza è nelle tue mani.</h1>
@@ -153,8 +162,11 @@
           </section>
 
           <section>
-            <div class="overflow-hidden">
-              <span class="title flex gap-3 text-primary-500 text-base items-center"><i></i>Alcune delle tecnologie che utilizziamo</span>
+            <div class="title flex gap-3 text-primary-500 text-base items-center overflow-hidden">
+              <span>
+                <i></i>
+                Alcune delle tecnologie che utilizziamo
+              </span>
             </div>
             <div class="overflow-hidden">
               <h1 class="font-medium text-primary-500 leading-12 sm:leading-[4.5rem] mt-6 text-4xl sm:text-[64px]">Figma / AdobeXD /<br>Wordpress / Elementor /<br> ACF / Wpml / Boostrap /<br> Javascript</h1>
@@ -374,6 +386,7 @@
             gsap.to('p', {color: 'var(--primary-500)'})
             gsap.to('a', {color: 'var(--primary-500)'})
             gsap.to('i', {backgroundColor: 'var(--primary-500)'})
+            gsap.to('#rectangle span', {borderColor: 'var(--dark) var(--dark) #71eac6 #71eac6'})
           }else {
             gsap.to('body', {backgroundColor: 'var(--primary-500)'})
             gsap.to('h1', {color: 'var(--primary-800)'})
@@ -382,6 +395,7 @@
             gsap.to('a', {color: 'var(--primary-800)'})
             gsap.to('i', {backgroundColor: 'var(--primary-800)'})
             gsap.to('div', {color: 'var(--primary-800)'})
+            gsap.to('#rectangle span', {borderColor: 'var(--primary-500) var(--primary-500) #71eac6 #71eac6'})
           }
           console.log("toggled, isActive:", self.isActive)
         },
@@ -478,17 +492,16 @@
       const pTags = document.querySelectorAll('p');
 
       titles.forEach((element) => {
-        console.log(element)
+        let span = element.querySelector("span")
         let titleTl = gsap.timeline({
           scrollTrigger: {
             trigger: element,
           }
         })
-        titleTl.from(element, 1.8, {
-          xPercent: -100,
-          ease: Power3.out,
-          stagger: 2.5,
-          delay: 0.2
+        titleTl.from([element, span], 1, {
+          duration:1,
+          xPercent: gsap.utils.wrap([-100, 100]),
+          ease: Power4.out,
         });
       })
 

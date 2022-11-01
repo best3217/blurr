@@ -1033,6 +1033,16 @@ section .title i {
   background: #DFD3C3;
 }
 
+.title {
+  display: inline-block;
+}
+
+section .title span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 h1 {
   font-size: 48px;
   font-family: DM Sans
@@ -1053,7 +1063,7 @@ p {
 
 #rectangle span {
   content: "";
-  transition: border-width .6s ease-out,border-color .6s cubic-bezier(.65,.05,.36,1);
+  transition: 2s;
   position: absolute;
   top: 0;
   right: 0;
