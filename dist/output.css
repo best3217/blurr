@@ -864,6 +864,10 @@ html {
   gap: 2rem;
 }
 
+.overflow-hidden{
+  overflow: hidden;
+}
+
 .border-b{
   border-bottom-width: 1px;
 }
@@ -976,12 +980,16 @@ html {
   font-style: italic;
 }
 
-.leading-12{
-  line-height: 3rem;
+.leading-\[2rem\]{
+  line-height: 2rem;
 }
 
 .leading-6{
   line-height: 1.5rem;
+}
+
+.leading-12{
+  line-height: 3rem;
 }
 
 .text-primary-500{
@@ -1016,7 +1024,7 @@ section {
   padding: 6rem 0;
 }
 
-section .title:before {
+section .title i {
   content: "";
   display: block;
   position: relative;
@@ -1075,6 +1083,14 @@ p {
   .container {
     padding: 2rem;
   }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
 }
 
 .logo {
@@ -1102,8 +1118,8 @@ p {
   --scroll-start: 0;
   --scroll-end: calc(-100% - var(--gap));
   --primary-500: #DFD3C3;
-  --primary-800: #9D9180
-    --dark: #27232C
+  --primary-800: #9D9180;
+  --dark: #27232C
   
 }
 
@@ -1364,6 +1380,10 @@ p {
 
   .md\:leading-20{
     line-height: 6rem;
+  }
+
+  .md\:leading-12{
+    line-height: 3rem;
   }
 }
 
