@@ -71,6 +71,11 @@ p {
     @apply font-helvetica
 }
 
+.logo-brand img {
+  width: 77px;
+  height: 24px;
+}
+
 .logo-section {
     position: absolute;
     left: 0;

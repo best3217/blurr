@@ -4136,6 +4136,10 @@ textarea.form-control.is-invalid {
   margin-bottom: 1rem;
 }
 
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
 .mb-7 {
   margin-bottom: 1.75rem;
 }
@@ -4312,6 +4316,11 @@ textarea.form-control.is-invalid {
   padding-bottom: 1.25rem;
 }
 
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .pb-8 {
   padding-bottom: 2rem;
 }
@@ -4356,14 +4365,14 @@ textarea.form-control.is-invalid {
   font-size: 20px;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .font-bold {
@@ -4489,6 +4498,11 @@ p {
   font-weight: 400;
   letter-spacing: -0.05rem;
   font-family: HelveticaNeueCyr
+}
+
+.logo-brand img {
+  width: 77px;
+  height: 24px;
 }
 
 .logo-section {
