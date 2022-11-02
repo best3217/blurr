@@ -23,8 +23,8 @@
             gsap.to('p', {color: 'var(--primary-500)'})
             gsap.to('a', {color: 'var(--primary-500)'})
             gsap.to('i', {backgroundColor: 'var(--primary-500)'})
-            gsap.to('#rectangle span', {borderColor: 'var(--dark) var(--dark) #71eac6 #71eac6'})
             gsap.to('body', {backgroundColor: 'var(--dark)'})
+            gsap.to('#rectangle span', {borderColor: 'var(--dark) var(--dark) #71eac6 #71eac6'})
           }else {
             gsap.to('h1', {color: 'var(--primary-800)'})
             gsap.to('p', {color: 'var(--primary-800)'})
@@ -104,11 +104,11 @@
         };
 
         splitLines(".reveal-text");
-
         let revealText = document.querySelectorAll(".reveal-text");
         gsap.registerPlugin(ScrollTrigger);
         let revealLines = revealText.forEach((element) => {
           const lines = element.querySelectorAll(".words");
+          const words = element.querySelectorAll(".word");
           let tl = gsap.timeline({
             scrollTrigger: {
               trigger: element,
@@ -116,11 +116,14 @@
             }
           });
           tl.set(element, { autoAlpha: 1 });
-          tl.from(lines, 1, {
+
+          tl.from([words], 1, {
             yPercent: 100,
+            translateZ: 0,
+            rotateZ: [10, 0],
             ease: Power3.out,
-            delay: 0.2
           });
+          
         });
 
 
@@ -135,7 +138,7 @@
             trigger: element,
           }
         })
-        titleTl.from([element, span], 1, {
+        titleTl.from([element, span], 2, {
           duration:1,
           xPercent: gsap.utils.wrap([-100, 100]),
           ease: Power4.out,
@@ -152,6 +155,7 @@
         pTagsTl.set(element, { autoAlpha: 1 });
         pTagsTl.from(element, 1, {
           yPercent: 100,
+          opacity:0,
           ease: Power3.out,
           stagger: 2.5,
           delay: 0.2
@@ -173,4 +177,28 @@
           delay: 0.2
         });
       })
+
+      // reveal image
+      let revealImg = document.querySelectorAll(".reveal-img");
+
+      revealImg.forEach((container) => {
+        let image = container.querySelector("img");
+        let imgTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: container
+          }
+        });
+      
+        imgTl.set(container, { autoAlpha: 1 });
+        imgTl.from(container, 1.5, {
+          xPercent: -100,
+          ease: Power2.out
+        });
+        imgTl.from(image, 1.5, {
+          xPercent: 100,
+          scale: 1.3,
+          delay: -1.5,
+          ease: Power2.out
+        });
+      });      
     });
