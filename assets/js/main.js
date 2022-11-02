@@ -26,14 +26,14 @@
             gsap.to('body', {backgroundColor: 'var(--dark)'})
             gsap.to('#rectangle span', {borderColor: 'var(--dark) var(--dark) #71eac6 #71eac6'})
           }else {
-            gsap.to('h1', {color: 'var(--dark)'})
-            gsap.to('p', {color: 'var(--dark)'})
-            gsap.to('span', {color: 'var(--dark)'})
-            gsap.to('a', {color: 'var(--dark)'})
-            gsap.to('i', {backgroundColor: 'var(--dark)'})
+            gsap.to('h1', {color: 'var(--primary-800)'})
+            gsap.to('p', {color: 'var(--primary-800)'})
+            gsap.to('span', {color: 'var(--primary-800)'})
+            gsap.to('a', {color: 'var(--primary-800)'})
+            gsap.to('i', {backgroundColor: 'var(--primary-800)'})
             gsap.to('body', {backgroundColor: 'var(--primary-500)'})
             gsap.to('#rectangle span', {borderColor: 'var(--primary-500) var(--primary-500) #71eac6 #71eac6'})
-            gsap.to('div', {color: 'var(--dark)'})
+            gsap.to('div', {color: 'var(--primary-800)'})
           }
           console.log("toggled, isActive:", self.isActive)
         },
