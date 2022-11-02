@@ -1,15 +1,15 @@
 
-      ScrollTrigger.create({
-        trigger: "#rectangle",
-        start: "top 50%+=100px",
-        endTrigger: "#rectangle",
-        end: "bottom 50%+=100px",
-        animation: gsap.to('#rectangle span', {borderWidth: '3rem'}),
-        onToggle: self => console.log("toggled, isActive:", self.isActive),
-        onUpdate: self => {
-          // document.
-        }
-      });
+      // ScrollTrigger.create({
+      //   trigger: "#rectangle",
+      //   start: "top 50%+=100px",
+      //   endTrigger: "#rectangle",
+      //   end: "bottom 50%+=100px",
+      //   animation: gsap.to('#rectangle span', {borderWidth: '3rem'}),
+      //   onToggle: self => console.log("toggled, isActive:", self.isActive),
+      //   onUpdate: self => {
+      //     // document.
+      //   }
+      // });
 
       ScrollTrigger.create({
         trigger: "#section3",
@@ -24,7 +24,6 @@
             gsap.to('a', {color: 'var(--primary-500)'})
             gsap.to('i', {backgroundColor: 'var(--primary-500)'})
             gsap.to('body', {backgroundColor: 'var(--dark)'})
-            gsap.to('#rectangle span', {borderColor: 'var(--dark) var(--dark) #71eac6 #71eac6'})
           }else {
             gsap.to('h1', {color: 'var(--primary-800)'})
             gsap.to('p', {color: 'var(--primary-800)'})
@@ -32,8 +31,6 @@
             gsap.to('a', {color: 'var(--primary-800)'})
             gsap.to('i', {backgroundColor: 'var(--primary-800)'})
             gsap.to('body', {backgroundColor: 'var(--primary-500)'})
-            gsap.to('#rectangle span', {borderColor: 'var(--primary-500) var(--primary-500) #71eac6 #71eac6'})
-            gsap.to('div', {color: 'var(--primary-800)'})
           }
           console.log("toggled, isActive:", self.isActive)
         },
