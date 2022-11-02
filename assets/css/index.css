@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,12 +5,12 @@
 @layer base {
     html {
       /* font-family: 'DM Sans', sans-serif; */
-      @apply font-dm
+      @apply font-helvetica
     }
 }
 
 body {
-    transition: 2s;
+  transition: 600ms ease;
 }
 
 a {
@@ -30,20 +28,26 @@ main {
 }
 
 section {
-    padding: 6rem 0;
+    padding: 8rem 0;
 }
 
 section .title i {
-    content: "";
-    display: block;
-    position: relative;
-    height: 1px;
-    width: 50px;
-    background: theme('colors.primary.500');
+  content: "";
+  display: block;
+  position: relative;
+  height: 1px;
+  width: 50px;
+  background: theme('colors.primary.500');
+}
+
+button {
+  color: #000000;
+  font-weight: 700;
 }
 
 .title {
-    display: inline-block;
+    display: inline-block !important;
+    font-weight: 700;
 }
 
 section .title span {
@@ -54,7 +58,8 @@ section .title span {
 
 h1 {
     font-size: 48px;
-    @apply font-dm
+    letter-spacing: -0.05rem;
+    @apply font-helvetica
 }
 
 p {
@@ -62,7 +67,8 @@ p {
     color: theme('colors.primary.500');
     line-height: 2rem;
     font-weight: 400;
-    @apply font-dm
+    letter-spacing: -0.05rem;
+    @apply font-helvetica
 }
 
 .logo-section {
@@ -72,7 +78,7 @@ p {
 
 #rectangle span {
     content: "";
-    transition: 2s;
+    transition: 600ms ease;
     position: absolute;
     top: 0;
     right: 0;
@@ -82,6 +88,29 @@ p {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: theme("colors.green.500");
+}
+
+h1, p, .title {
+  transition: color .6s cubic-bezier(.65,.05,.36,1);
+}
+
+.accordion button::after {
+    -ms-flex-shrink: 0;
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: auto;
+    margin-right: 17px;
+    content: "";
+    background-image: url("../assets/img/plus.png");
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+    transition: transform .2s ease-in-out;
+}
+
+.accordion button:not(.collapsed)::after {
+    background-image: url("../assets/img/minus.png");
+    transition: transform .2s ease-in-out;
 }
 
 @media(max-width: 1092px) {
@@ -113,7 +142,7 @@ p {
 }
 
 .logo {
-    padding: 18px 20px;
+    padding: 30px 40px;
     background-color: #312C37;
 }
 
@@ -168,9 +197,17 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: var(--gap);
+    gap: 20px;
     min-width: 100%;
     animation: scroll-x var(--duration) linear infinite;
+  }
+
+  .collapse {
+    visibility: inherit;
+  }
+
+  .accordion-button:not(.collapsed) {
+    background-color: theme('colors.dark') !important;
   }
   
   @media (prefers-reduced-motion: reduce) {

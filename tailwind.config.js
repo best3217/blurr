@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  content: ['./*.{html,js}'],
+  content: ['./*.{html,js}', './node_modules/tw-elements/dist/js/**/*.js'],
   theme: {
     extend: {
       colors: {
@@ -10,14 +10,15 @@ module.exports = {
         },
         primary: {
           300: '#F2E4D0',
-          500: '#DFD3C3',
-          800: '#9D9180'
+          500: '#FFFFFF',
+          800: '#9D9180',
+          900: '#3F3946',
         },
         dark: '#27232C',
         purple: '#B986F2'
       },
       fontFamily: {
-        'dm': 'DM Sans'
+        'helvetica': 'HelveticaNeueCyr'
       },
       container: {
         center: true,
@@ -35,12 +36,17 @@ module.exports = {
         '13': '3.5rem'
       },
       spacing: {
-        '20': '8rem',
+        '15': '4rem',
+        '20': '6.5rem',
+      },
+      letterSpacing: {
+        tight: "-0.03rem"
       }
     },
   },
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
+    require('tw-elements/dist/plugin')
   ],
 };
