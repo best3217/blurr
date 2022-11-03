@@ -31,13 +31,15 @@ module.exports = {
         },
       },
       lineHeight: {
-        '20': '6rem',
         '12': '3rem',
-        '13': '3.5rem'
+        '13': '3.5rem',
+        '20': '6rem',
+        '25': '7.5rem',
       },
       spacing: {
         '15': '4rem',
         '20': '6.5rem',
+        '25': '7.5rem',
       },
       letterSpacing: {
         tight: "-0.03rem"

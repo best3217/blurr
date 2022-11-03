@@ -5220,6 +5220,10 @@ body.light-mode .cursor {
   .md\:leading-12 {
     line-height: 3rem;
   }
+
+  .md\:leading-25 {
+    line-height: 7.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
