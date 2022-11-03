@@ -11,26 +11,19 @@
       //   }
       // });
 
+      let body = document.querySelector("body")
+
       ScrollTrigger.create({
         trigger: "#section3",
         start: "top 50%+=100px",
         endTrigger: "#section5",
+        toggleActions: "play reverse play reverse",
         end: "bottom bottom",
         onToggle: self => {
           if(!self.isActive) {
-            gsap.to('h1', {color: 'var(--primary-500)'})
-            gsap.to('span', {color: 'var(--primary-500)'})
-            gsap.to('p', {color: 'var(--primary-500)'})
-            gsap.to('a', {color: 'var(--primary-500)'})
-            gsap.to('i', {backgroundColor: 'var(--primary-500)'})
-            gsap.to('body', {backgroundColor: 'var(--dark)'})
+            body.setAttribute('class', 'dark-mode')
           }else {
-            gsap.to('h1', {color: 'var(--primary-800)'})
-            gsap.to('p', {color: 'var(--primary-800)'})
-            gsap.to('span', {color: 'var(--primary-800)'})
-            gsap.to('a', {color: 'var(--primary-800)'})
-            gsap.to('i', {backgroundColor: 'var(--primary-800)'})
-            gsap.to('body', {backgroundColor: 'var(--primary-500)'})
+            body.setAttribute('class', 'light-mode')
           }
           console.log("toggled, isActive:", self.isActive)
         },

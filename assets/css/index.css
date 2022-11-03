@@ -10,7 +10,11 @@
 }
 
 body {
-  transition: 1s ease;
+  transition: background-color 600ms cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+h1, p, .title {
+  transition: color .6s cubic-bezier(.65,.05,.36,1);
 }
 
 a {
@@ -94,10 +98,6 @@ p {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: theme("colors.green.500");
-}
-
-h1, p, .title {
-  transition: color 10ms ease;
 }
 
 .word {
@@ -336,3 +336,28 @@ h1, p, .title {
     }
   }
   
+  
+
+.light-mode {
+  background-color: theme("colors.primary.500");
+}
+
+.dark-mode {
+  background-color: theme("colors.dark");
+}
+
+body.light-mode h1, body.light-mode p, body.light-mode .title {
+  color: theme("colors.dark");
+}
+
+body.light-mode i {
+  background: theme("colors.dark");
+}
+
+body.dark-mode h1, body.dark-mode p, body.dark-mode .title {
+  color: theme("colors.primary.500");
+}
+
+body.dark-mode i {
+  background: theme("colors.primary.500");
+}
