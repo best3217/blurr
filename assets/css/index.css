@@ -9,11 +9,106 @@
     }
 }
 
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+html, body {
+  /* scroll-behavior: smooth !important; */
+}
+
 body {
+  cursor: none;
   transition: background-color 600ms cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
-h1, p, .title {
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 0;
+  z-index: 999;
+  transition: transform .8s ease,background-color .4s ease;
+}
+
+header.down {
+  transform: translateY(calc(-100% - 60px));
+}
+
+header.up {
+  background-color: theme("colors.primary.500");
+}
+
+header.up a span {
+  color: theme("colors.dark");
+}
+
+header.up img {
+  filter: blur(0.6px) brightness(0.4) grayscale(0.45) contrast(0.8) hue-rotate(8deg) invert(0.2);
+}
+
+body.light-mode header.up {
+  background-color: theme("colors.dark");
+}
+
+body.light-mode header.up a span {
+  color: theme("colors.primary.500");
+}
+
+body.light-mode header.up img {
+  filter: none;
+}
+
+
+.hover-this {
+  transition: all 0.3s ease;
+}
+
+header span {
+  display: inline-block;
+  font-weight: 500;
+  color: theme("colors.primary.500");
+  pointer-events: none;
+  transition: transform 0.1s linear;
+}
+
+
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  padding: 0.3rem;
+  background-color: #fff;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  transition: transform 0.3s ease;
+}
+
+.hover-this:hover ~ .cursor {
+  transform: translate(-50%, -50%) scale(8);
+}
+
+@media(min-width: 900px) {
+  .nav {
+        display: flex;
+        justify-content: space-around;
+  }
+}
+
+@media(max-width: 900px) {
+  .hover-this {
+        width: 100%;
+        padding: 20px 0;
+        display: inline-block;
+  }
+}
+
+.hover-this:hover ~ .cursor {
+  transform: translate(-50%, -50%) scale(8);
+}
+
+
+h1, p, .title, h2 {
   transition: color .6s cubic-bezier(.65,.05,.36,1);
 }
 
@@ -363,7 +458,10 @@ p {
       visibility: hidden;
     }
   }
-  
+
+.no-aspect {
+  aspect-ratio: 0 !important;
+}
   
 
 .light-mode {
@@ -374,7 +472,7 @@ p {
   background-color: theme("colors.dark");
 }
 
-body.light-mode h1, body.light-mode p, body.light-mode .title {
+body.light-mode h1, body.light-mode h2, body.light-mode p, body.light-mode .title {
   color: theme("colors.dark");
 }
 
@@ -382,10 +480,18 @@ body.light-mode i {
   background: theme("colors.dark");
 }
 
-body.dark-mode h1, body.dark-mode p, body.dark-mode .title {
+body.dark-mode h1,body.dark-mode h2, body.dark-mode p, body.dark-mode .title {
   color: theme("colors.primary.500");
 }
 
 body.dark-mode i {
   background: theme("colors.primary.500");
+}
+
+body.dark-mode .cursor {
+    background-color: #fff;
+}
+
+body.light-mode .cursor {
+  background-color: theme("colors.dark");
 }

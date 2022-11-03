@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,351 +8,355 @@
 
     <link href="./dist/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/font/stylesheet.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
   </head>
   <body class="bg-dark">
-    <div class="container">
-      <header class="py-4 flex justify-between">
-        <div class="logo-brand flex items-center">
-          <a href="/index.html">
-            <img src="./assets/img/Logo.svg">
-          </a>
-        </div>
-        <div class="nav flex items-center">
-          <ul class="flex">
-            <li>
-              <a href="#" class="px-5 text-lg">Lavori</a>
-            </li>
-            <li>
-              <a href="#" class="px-5 text-lg">Cosa Facciamo</a>
-            </li>
-            <li>
-              <a href="#" class="px-5 text-lg">Studio</a>
-            </li>
-          </ul>
-          <button class="px-8 py-3 bg-primary-500 font-dm text-lg font-bold ml-5">Contattaci</button>
-        </div>
-      </header>
-      <main>
-        <div class="container-xl">
-          <section id="section1" class="h-screen md:flex justify-center flex-col">
-            <div class="font-helvetica tracking-tight text-4xl md:text-6xl lg:text-8xl lg:w-3/4 font-medium text-primary-500 md:leading-20 reveal-text">Uno studio che aiuta le aziende digital a creare soluzioni digital.</div>
-          </section>
-
-          <section id="section2">
-            <div class="grid sm:grid-cols-2 items-center gap-10 lg:gap-20 overflow-hidden">
-              <div id="rectangle" class="reveal-img relative">
-                <span></span>
-                <img src="./assets/img/Rectangle2.png" alt="Rectangle2" class="w-[120%] parallax-img">
-              </div>
-              <div>
-                <div class="title font-helvetica flex gap-3 text-primary-500 text-base items-center">
-                  <div class="overflow-hidden flex items-center">
-                    <i></i>
-                  </div>
-                  <div class="overflow-hidden">
-                    <span>
-                      Nati con la voglia di creare il nuovo
-                    </span>
-                  </div>
-                </div>
-                <div class="overflow-hidden">
-                  <h1 class="font-medium text-primary-500 leading-[2rem] md:leading-12 mt-6">Amiamo comunicare attraverso creatività e la semplicità.</h1>
-                </div>
-                <p class="mt-6 mb-7">La nostra passione per la creatività ci spinge a realizzare e sviluppare design unici, capaci di dare risalto alle caratteristiche principali delle imprese.</p>
-                <p>Il nostro focus è B2B e lavoriamo direttamente con altre Web Agency / Freelancer / Consulenti per occuparci del prodotto.</p>
-              </div>
-            </div>
-          </section>
-
-          <section id="section3">
-            <div class="title font-helvetica flex gap-3 text-primary-500 text-base items-center">
-              <div class="overflow-hidden flex items-center">
-                <i></i>
-              </div>
-              <div class="overflow-hidden">
-                <span>
-                  Nati con la voglia di creare il nuovo
-                </span>
-              </div>
-            </div>
-            
-            <div class="grid sm:grid-cols-2 gap-10 md:gap-20 mt-6">
-              <div class="">
-                <!-- <div class="overflow-hidden"> -->
-                  <h1 class="font-medium text-primary-500 leading-[2rem] md:leading-12">Aiutiamo le aziende a scalare e produrre più progetti in tempo.</h1>
-                <!-- </div> -->
-              </div>
-              <div>
-                <p class="mb-7">Essendo uno studio verticale siamo in grado di rimanere sempre aggiornati utilizziamo le migliori tecnologie e metodi smart per creare i tuoi progetti in tempistiche brevi.</p>
-                <p>Non solo, utilizziamo il famoso page builder chiamato Elementor per poter dare anche a voi la possibilità di gestire o modificare i siti dei vostri clienti.</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section>
-            <div class="sm:w-3/4 mx-auto">
-              <div class="overflow-hidden flex items-center">
-                <i></i>
-              </div>
-              <div class="overflow-hidden">
-                <span>
-                  Come possiamo aiutarti
-                </span>
-              </div>
-              <div class="overflow-hidden">
-                <h1 class="font-medium text-primary-500 leading-[2rem] md:leading-12 mt-6">Ci siamo verticalizzati sulla creazione di siti web in Wordpress e Custom, la nostra esperienza è nelle tue mani.</h1>
-              </div>
-              <p class="italic mt-5">Lavoriamo con 3 principali metodi di sviluppo in base al tipo di progetto</p>
-            </div>
-          </section>
-
-          <section id="section5" class="md:w-9/12 lg:w-7/12 mx-auto">
-            <div class="sm:grid grid-flow-row-dense sm:grid-cols-4 gap-8 items-center">
-              <div class="col-span-1">
-                <img src="./assets/img/wordpress.png" class="sm:w-full mx-auto mb-5 sm:mb-0">
-              </div>
-              <div class="col-span-3 text-center sm:text-left">
-                <div class="overflow-hidden">
-                  <h1 class="text-2xl text-primary-500 font-bold font-dm">Wordpress + Custom Frontend</h1>
-                </div>
-                <p class="text-lg leading-6">Se sai già che non metterai mano al layout del del tuo sito ma solo ai contenuti consigliamo una Soluzione Custom, più leggero, performante e più creativo.</p>
-              </div>
-            </div>
-
-            <div class="sm:grid grid-flow-row-dense sm:grid-cols-4 gap-8 items-center my-10">
-              <div class="col-span-1">
-                <img src="./assets/img/wordpress.png" class="sm:w-full mx-auto mb-5 sm:mb-0">
-              </div>
-              <div class="col-span-3 text-center sm:text-left">
-                <div class="overflow-hidden">
-                  <h1 class="text-2xl text-primary-500 font-bold font-dm">Wordpress + Elementor</h1>
-                </div>
-                <div class="overflow-hidden">
-                  <p class="text-lg leading-6">Se vuoi essere indipendente e avere la possibilità di modificare l’aspetto del tuo sito come e quando vuoi, sicuramente la soluzione con Elementor fa al caso tuo, è anche la soluzione più economica e veloce.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="sm:grid grid-flow-row-dense sm:grid-cols-4 gap-8 items-center">
-              <div class="col-span-1">
-                <img src="./assets/img/wordpress.png" class="sm:w-full mx-auto mb-5 sm:mb-0">
-              </div>
-              <div class="col-span-3 text-center sm:text-left">
-                <div class="overflow-hidden">
-                  <h1 class="text-2xl text-primary-500 font-bold font-dm">Custom</h1>
-                </div>
-                <p class="text-lg leading-6">Se il sito è completamente statico e non c’è nessuna necessità di doverlo personalizzare costantemente la soluzione custom può essere un’ottima opzione.</p>
-              </div>
-            </div>
-            
-            <div class="mt-12 text-center">
-              <button class="bg-white px-8 py-3 font-bold text-lg mt-5">Scopri tutti i nostri servizi</button>
-            </div>
-          </section>
-
-          <section>
-            <div class="reveal-img">
-              <img src="./assets/img/Rectangle20.png" class="w-full" alt="Rectangle20">
-            </div>
-          </section>
-
-          <section>
-            <div class="title font-helvetica flex gap-3 text-primary-500 text-base items-center">
-              <div class="overflow-hidden flex items-center">
-                <i></i>
-              </div>
-              <div class="overflow-hidden">
-                <span>
-                  Alcune delle tecnologie che utilizziamo
-                </span>
-              </div>
-            </div>
-            <div class="overflow-hidden">
-              <h1 class="font-medium text-primary-500 leading-12 sm:leading-[6.5rem] mt-6 text-4xl sm:text-[6rem]">Figma / AdobeXD /<br>Wordpress / Elementor /<br> ACF / Wpml / Boostrap /<br> Javascript</h1>
-            </div>
-            <p class="mt-5">/ e molto altro ancora</p>
-          </section>
-
-          <section>
-            <div class="overflow-hidden mb-5">
-              <h1 class="font-medium text-primary-500 text-center mb-6">Aziende con cui collaboriamo</h1>
-            </div>
-            <article class="wrapper logo-section">
-              <div class="marquee">
-                <div class="marquee">
-                  <div class="marquee__group">
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo2.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo3.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo4.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo5.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo6.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo7.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo8.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo9.png">
-                    </div>
-                  </div>
-                  <div aria-hidden="true" class="marquee__group">
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo2.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo3.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo4.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo5.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo6.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo7.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo8.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo9.png">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="marquee ">
-                <div class="marquee marquee--reverse">
-                  <div class="marquee__group">
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo10.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo11.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo12.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo13.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo14.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo15.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo16.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo17.png">
-                    </div>
-                  </div>
-                  <div aria-hidden="true" class="marquee__group">
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo10.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo11.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo12.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo13.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo14.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo15.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo16.png">
-                    </div>
-                    <div class="logo">
-                      <img src="./assets/img/logos/logo17.png">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </section>
-
-          <section class="lg:mt-[18rem]">
-            <div class="overflow-hidden">
-              <h1 class="font-medium text-primary-500 leading-12 sm:leading-[4.5rem] mt-6 text-4xl sm:text-[64px] text-center">Parlaci del tuo prossimo <br>progetto.</h1>
-            </div>
-            <div class="mt-12 text-center">
-              <button class="bg-white px-8 py-3 font-bold text-lg">Contattaci ora</button>
-            </div>
-          </section>
-
-        </div>
-      </main>
-
-      <footer class="sm:mt-[8rem] py-5">
+    
+      <header>
         <div class="container">
-          <div class="sm:grid grid-flow-row-dense sm:grid-cols-12 border-b border-primary-500 pb-8">
-            <div class="col-span-8 mb-5 sm:mb-0">
-              <img src="./assets/img/Logo.svg" class="mx-auto sm:mx-0">
-              <p class="sm:w-1/5 text-center sm:text-left mt-5">
-                Il tuo partner per il design e sviluppo
-              </p>
+          <div class="flex flex-wrap justify-between">
+            <div class="logo-brand flex items-center">
+              <a href="/index.html">
+                <img src="./assets/img/Logo.svg">
+              </a>
             </div>
-            <div class="col-span-2 text-center sm:text-left">
-              <p class="text-white font-bold text-base mb-4">Links</p>
-              <ul>
-                <li class="mb-4">
-                  <a href="#">Home</a>
-                </li>
-                <li class="mb-4">
-                  <a href="#">Cosa Facciamo</a>
-                </li>
-                <li class="mb-4">
-                  <a href="#">Studio</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-span-2 text-center sm:text-left mb-4">
-              <p class="text-white font-bold text-base">Studio</p>
-              <ul>
-                <li class="mb-4">
-                  <a href="#">Via Valentini 9, 38060 Calliano (TN)</a>
-                </li>
-              </ul>
-              <p class="text-white font-bold text-base mb-4">Contatti</p>
-              <ul>
-                <li class="mb-4">
-                  <a href="#">aryan@blurr.it</a>
-                </li>
-                <li class="mb-4">
-                  <a href="#">+39 3770935429</a>
-                </li>
-              </ul>
+            <button id="toggle-button" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+            <div id="nav-toggle" class="items-center hidden w-full lg:block md:w-auto">
+              <div class="nav-wrapper">
+                <nav class="nav">
+                   <a href="#" class="hover-this px-5 text-lg"><span>Lavori</span></a>
+                   <a href="#" class="hover-this px-5 text-lg"><span>Cosa Facciamo</span></a>
+                   <a href="#" class="hover-this px-5 text-lg"><span>Studio</span></a>
+                   <a href="#" class="hover-this pl-5 text-lg"><span>Lavora con noi</span></a>
+                  <div class="cursor"></div>
+                </nav>
+              </div>
             </div>
           </div>
-          <p class="text-base pt-8 text-center sm:text-left">Copyright 2022 Blurr.it | p.va 02559530221</p>
         </div>
-      </footer>
-    </div>
+      </header>
+      <div data-scroll-container>
+        <div class="container">
+          <main>
+            <section id="section1" data-scroll class="h-screen flex justify-center flex-col">
+              <div class="font-helvetica tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-8xl lg:w-3/4 font-medium text-primary-500 leading-13 md:leading-20 reveal-text">Uno studio che aiuta le aziende digital a creare soluzioni digital.</div>
+            </section>
+  
+            <section id="section2" data-scroll>
+              <div class="grid sm:grid-cols-2 items-center gap-10 lg:gap-20 overflow-hidden">
+                <div id="rectangle" class="reveal-img relative">
+                  <span></span>
+                  <img src="./assets/img/Rectangle2.png" alt="Rectangle2" class="w-[120%] parallax-img">
+                </div>
+                <div>
+                  <div class="title font-helvetica flex gap-3 text-primary-500 text-base items-center">
+                    <div class="overflow-hidden flex items-center">
+                      <i></i>
+                    </div>
+                    <div class="overflow-hidden">
+                      <span>
+                        Nati con la voglia di creare il nuovo
+                      </span>
+                    </div>
+                  </div>
+                  <div class="overflow-hidden">
+                    <h1 class="font-medium text-primary-500 leading-[2rem] md:leading-12 mt-6">Amiamo comunicare attraverso creatività e la semplicità.</h1>
+                  </div>
+                  <p class="mt-6 mb-7">La nostra passione per la creatività ci spinge a realizzare e sviluppare design unici, capaci di dare risalto alle caratteristiche principali delle imprese.</p>
+                  <p>Il nostro focus è B2B e lavoriamo direttamente con altre Web Agency / Freelancer / Consulenti per occuparci del prodotto.</p>
+                </div>
+              </div>
+            </section>
+  
+            <section id="section3" data-scroll>
+              <div class="title font-helvetica flex gap-3 text-primary-500 text-base items-center">
+                <div class="overflow-hidden flex items-center">
+                  <i></i>
+                </div>
+                <div class="overflow-hidden">
+                  <span>
+                    Nati con la voglia di creare il nuovo
+                  </span>
+                </div>
+              </div>
+              
+              <div class="grid sm:grid-cols-2 gap-10 md:gap-20 mt-6">
+                <div class="">
+                    <h1 class="font-medium text-primary-500 leading-[2rem] md:leading-12">Aiutiamo le aziende a scalare e produrre più progetti in tempo.</h1>
+                </div>
+                <div>
+                  <p class="mb-7">Essendo uno studio verticale siamo in grado di rimanere sempre aggiornati utilizziamo le migliori tecnologie e metodi smart per creare i tuoi progetti in tempistiche brevi.</p>
+                  <p>Non solo, utilizziamo il famoso page builder chiamato Elementor per poter dare anche a voi la possibilità di gestire o modificare i siti dei vostri clienti.</p>
+                </div>
+              </div>
+            </section>
+  
+            <section data-scroll>
+              <div class="sm:w-3/4 mx-auto">
+                <div class="overflow-hidden flex items-center">
+                  <i></i>
+                </div>
+                <div class="overflow-hidden">
+                  <span>
+                    Come possiamo aiutarti
+                  </span>
+                </div>
+                <div class="overflow-hidden">
+                  <h1 class="font-medium text-primary-500 leading-[2rem] md:leading-12 mt-6">Ci siamo verticalizzati sulla creazione di siti web in Wordpress e Custom, la nostra esperienza è nelle tue mani.</h1>
+                </div>
+                <p class="italic mt-5">Lavoriamo con 3 principali metodi di sviluppo in base al tipo di progetto</p>
+              </div>
+            </section>
+  
+            <section data-scroll id="section5" class="md:w-9/12 lg:w-7/12 mx-auto">
+              <div class="sm:grid grid-flow-row-dense sm:grid-cols-4 gap-8 items-center">
+                <div class="col-span-1">
+                  <img src="./assets/img/wordpress.svg" class="sm:w-full mx-auto mb-5 sm:mb-0">
+                </div>
+                <div class="col-span-3 text-center sm:text-left">
+                  <div class="overflow-hidden mb-3 sm:mb-7">
+                    <h2 class="text-2xl text-primary-500 font-bold font-dm">Wordpress + <span class="italic font-medium">Custom Frontend</span></h2>
+                  </div>
+                  <p class="text-xl leading-6">Se sai già che non metterai mano al layout del del tuo sito ma solo ai contenuti consigliamo una Soluzione Custom, più leggero, performante e più creativo.</p>
+                </div>
+              </div>
+  
+              <div class="sm:grid grid-flow-row-dense sm:grid-cols-4 gap-8 items-center my-10">
+                <div class="col-span-1">
+                  <img src="./assets/img/wordpress.svg" class="sm:w-full mx-auto mb-5 sm:mb-0">
+                </div>
+                <div class="col-span-3 text-center sm:text-left">
+                  <div class="overflow-hidden mb-3 sm:mb-7">
+                    <h2 class="text-2xl text-primary-500 font-bold font-dm">Wordpress + <span class="italic font-medium">Elementor</span></h2>
+                  </div>
+                  <div class="overflow-hidden">
+                    <p class="text-xl leading-6">Se vuoi essere indipendente e avere la possibilità di modificare l’aspetto del tuo sito come e quando vuoi, sicuramente la soluzione con Elementor fa al caso tuo, è anche la soluzione più economica e veloce.</p>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="sm:grid grid-flow-row-dense sm:grid-cols-4 gap-8 items-center">
+                <div class="col-span-1">
+                  <img src="./assets/img/wordpress.svg" class="sm:w-full mx-auto mb-5 sm:mb-0">
+                </div>
+                <div class="col-span-3 text-center sm:text-left">
+                  <div class="overflow-hidden mb-3 sm:mb-7">
+                    <h2 class="text-2xl text-primary-500 font-bold font-dm">Custom</h2>
+                  </div>
+                  <p class="text-xl leading-6">Se il sito è completamente statico e non c’è nessuna necessità di doverlo personalizzare costantemente la soluzione custom può essere un’ottima opzione.</p>
+                </div>
+              </div>
+              
+              <div class="mt-12 text-center">
+                <button class="bg-white px-8 py-3 font-bold text-lg mt-5">Scopri tutti i nostri servizi</button>
+              </div>
+            </section>
+  
+            <section data-scroll class="overflow-hidden">
+              <div class="reveal-img no-aspect">
+                <img src="./assets/img/Rectangle20.png" class="w-full" alt="Rectangle20">
+              </div>
+            </section>
+  
+            <section data-scroll>
+              <div class="title font-helvetica flex gap-3 text-primary-500 text-base items-center">
+                <div class="overflow-hidden flex items-center">
+                  <i></i>
+                </div>
+                <div class="overflow-hidden">
+                  <span>
+                    Alcune delle tecnologie che utilizziamo
+                  </span>
+                </div>
+              </div>
+              <div class="overflow-hidden">
+                <h1 class="font-medium text-primary-500 leading-12 sm:leading-[6.5rem] mt-6 text-4xl sm:text-[6rem]">Figma / AdobeXD /<br>Wordpress / Elementor /<br> ACF / Wpml / Boostrap /<br> Javascript</h1>
+              </div>
+              <p class="mt-5">/ e molto altro ancora</p>
+            </section>
+  
+            <section data-scroll>
+              <div class="overflow-hidden mb-5 text-center">
+                <h1 class="font-medium text-primary-500 text-center inline-block mb-6">Aziende con cui collaboriamo</h1>
+              </div>
+              <article class="wrapper logo-section">
+                <div class="marquee">
+                  <div class="marquee">
+                    <div class="marquee__group">
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo2.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo3.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo4.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo5.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo6.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo7.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo8.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo9.png">
+                      </div>
+                    </div>
+                    <div aria-hidden="true" class="marquee__group">
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo2.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo3.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo4.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo5.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo6.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo7.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo8.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo9.png">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="marquee ">
+                  <div class="marquee marquee--reverse">
+                    <div class="marquee__group">
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo10.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo11.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo12.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo13.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo14.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo15.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo16.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo17.png">
+                      </div>
+                    </div>
+                    <div aria-hidden="true" class="marquee__group">
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo10.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo11.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo12.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo13.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo14.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo15.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo16.png">
+                      </div>
+                      <div class="logo">
+                        <img src="./assets/img/logos/logo17.png">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </section>
+  
+            <section data-scroll class="lg:mt-[18rem]">
+              <div class="overflow-hidden text-center">
+                <h1 class="font-medium text-primary-500 leading-12 sm:leading-[4.5rem] mt-6 text-4xl sm:text-[64px] text-center inline-block">Parlaci del tuo prossimo <br>progetto.</h1>
+              </div>
+              <div class="mt-12 text-center">
+                <button class="bg-white px-8 py-3 font-bold text-lg">Contattaci ora</button>
+              </div>
+            </section>
+          </main>
+        </div>
+
+        <footer class="sm:mt-[8rem] py-5">
+          <div class="container">
+            <div class="sm:grid grid-flow-row-dense sm:grid-cols-12 border-b border-primary-500 pb-8">
+              <div class="col-span-8 mb-5 sm:mb-0">
+                <img src="./assets/img/Logo.svg" class="mx-auto sm:mx-0">
+                <span class="sm:w-1/5 text-center sm:text-left mt-5 text-2xl text-primary-500 block">
+                  Il tuo partner per il design e sviluppo
+                </span>
+              </div>
+              <div class="col-span-2 text-center sm:text-left">
+                <span class="text-white font-bold text-base mb-4 block">Links</span>
+                <ul>
+                  <li class="mb-4">
+                    <a href="#">Home</a>
+                  </li>
+                  <li class="mb-4">
+                    <a href="#">Cosa Facciamo</a>
+                  </li>
+                  <li class="mb-4">
+                    <a href="#">Studio</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-span-2 text-center sm:text-left">
+                <span class="text-white font-bold text-base block mb-4">Studio</span>
+                <ul>
+                  <li class="mb-7">
+                    <a href="#">Via Valentini 9, 38060 Calliano (TN)</a>
+                  </li>
+                </ul>
+                <span class="text-white font-bold text-base mb-4 block">Contatti</span>
+                <ul>
+                  <li class="mb-4">
+                    <a href="#">aryan@blurr.it</a>
+                  </li>
+                  <li class="mb-4">
+                    <a href="#">+39 3770935429</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <span class="text-base pt-8 text-center sm:text-left block text-primary-500">Copyright 2022 Blurr.it | p.va 02559530221</sp>
+          </div>
+        </footer>
+      </div>
   </body>
   <script src="./assets/js/main.js"></script>
 </html>
