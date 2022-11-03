@@ -4180,6 +4180,10 @@ textarea.form-control.is-invalid {
   width: 100%;
 }
 
+.w-\[120\%\] {
+  width: 120%;
+}
+
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -4487,14 +4491,33 @@ button {
 }
 
 .title {
-  display: inline-block !important;
   font-weight: 700;
+}
+
+.title i, .title span {
+  display: inline-block !important;
 }
 
 section .title span {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.reveal-img {
+  aspect-ratio: 1/1
+}
+
+.parallax-img {
+  display: block;
+  position: absolute;
+  top: -20%;
+  width: 120%;
+  height: 120%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 h1 {
@@ -4508,13 +4531,18 @@ p {
   color: #FFFFFF;
   line-height: 2rem;
   font-weight: 400;
-  letter-spacing: -0.05rem;
+  letter-spacing: -0.01rem;
   font-family: HelveticaNeueCyr
 }
 
 .logo-brand img {
   width: 77px;
   height: 24px;
+  transition: filter .4s cubic-bezier(.65,.05,.36,1);
+}
+
+.logo-brand img:hover {
+  filter: blur(0.6px) brightness(0.4) grayscale(0.45) contrast(0.8) hue-rotate(8deg) invert(0.2);
 }
 
 .logo-section {
@@ -4919,8 +4947,16 @@ body.dark-mode i {
     line-height: 1;
   }
 
+  .sm\:text-\[6rem\] {
+    font-size: 6rem;
+  }
+
   .sm\:leading-\[4\.5rem\] {
     line-height: 4.5rem;
+  }
+
+  .sm\:leading-\[6\.5rem\] {
+    line-height: 6.5rem;
   }
 }
 
@@ -5021,7 +5057,6 @@ body.dark-mode i {
   }
 
   .lg\:text-8xl {
-    font-size: 6rem;
-    line-height: 1;
+    font-size: 6.5rem;
   }
 }

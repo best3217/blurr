@@ -54,14 +54,33 @@ button {
 }
 
 .title {
-    display: inline-block !important;
     font-weight: 700;
+}
+
+.title i, .title span {
+  display: inline-block !important;
 }
 
 section .title span {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.reveal-img {
+  aspect-ratio: 1/1
+}
+
+.parallax-img {
+  display: block;
+  position: absolute;
+  top: -20%;
+  width: 120%;
+  height: 120%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 h1 {
@@ -75,13 +94,18 @@ p {
     color: theme('colors.primary.500');
     line-height: 2rem;
     font-weight: 400;
-    letter-spacing: -0.05rem;
+    letter-spacing: -0.01rem;
     @apply font-helvetica
 }
 
 .logo-brand img {
   width: 77px;
   height: 24px;
+  transition: filter .4s cubic-bezier(.65,.05,.36,1);
+}
+
+.logo-brand img:hover {
+  filter: blur(0.6px) brightness(0.4) grayscale(0.45) contrast(0.8) hue-rotate(8deg) invert(0.2);
 }
 
 .logo-section {

@@ -94,6 +94,7 @@
         };
 
         splitLines(".reveal-text");
+        splitLines("h1")
         let revealText = document.querySelectorAll(".reveal-text");
         gsap.registerPlugin(ScrollTrigger);
         let revealLines = revealText.forEach((element) => {
@@ -122,17 +123,19 @@
       const pTags = document.querySelectorAll('p');
 
       titles.forEach((element) => {
+        let icon = element.querySelector("i")
         let span = element.querySelector("span")
+        let spanParent = span.parentNode
+        console.log(spanParent)
         let titleTl = gsap.timeline({
           scrollTrigger: {
             trigger: element,
           }
         })
-        titleTl.from([element, span], 2, {
-          duration:1,
+        titleTl.from([spanParent, span, icon], 1, {
           xPercent: gsap.utils.wrap([-100, 100]),
-          ease: Power4.out,
-        });
+          ease: Power2.out,
+        })
       })
 
       pTags.forEach((element) => {
@@ -144,27 +147,28 @@
 
         pTagsTl.set(element, { autoAlpha: 1 });
         pTagsTl.from(element, 1, {
-          yPercent: 100,
+          yPercent: 25,
           opacity:0,
           ease: Power3.out,
           stagger: 2.5,
-          delay: 0.2
         });
       })
 
       h1Tags.forEach((element) => {
+        const lines = element.querySelectorAll(".words");
+        const words = element.querySelectorAll(".word");
         let h1TagsTl = gsap.timeline({
           scrollTrigger: {
             trigger: element,
+            toggleActions: "restart none none reset"
           }
-        })
-
+        });
         h1TagsTl.set(element, { autoAlpha: 1 });
-        h1TagsTl.from(element, 1, {
+
+        h1TagsTl.from([lines], 1, {
           yPercent: 100,
+          translateZ: 0,
           ease: Power3.out,
-          stagger: 2.5,
-          delay: 0.2
         });
       })
 
@@ -190,5 +194,31 @@
           delay: -1.5,
           ease: Power2.out
         });
-      });      
+      });
+      
+      let header = document.querySelector("header");
+      let logo = header.querySelector("img")
+      let links = header.querySelectorAll("a");
+      let button = header.querySelectorAll("button");
+      let headerTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: header
+        }
+      })
+
+      headerTl.from([logo, links, button], 1, {
+        opacity:0,
+        ease: Power4.out
+      })
+
+      gsap.to(".parallax-img", {
+        yPercent: 20,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".parallax-img",
+          // start: "top bottom", // the default values
+          // end: "bottom top",
+          scrub: true
+        }, 
+      });
     });
