@@ -62,13 +62,16 @@ ScrollTrigger.create({
     console.log("toggled, isActive:", self.isActive)
   },
   onUpdate: self => {
+    console.log(self.direction, self.progress)
+    console.log(self.progress.toFixed(2)*1)
     if(self.direction == 1) {
       header.setAttribute("class", "down")
-    }else {
+    }
+    if(self.direction == -1 && self.progress.toFixed(2)*1 < 0.99) {
       header.setAttribute("class", "up")
     }
 
-    if(self.progress < 0.09) {
+    if(self.progress < 0.1) {
       header.removeAttribute('class', 'up')
     }
   }
