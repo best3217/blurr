@@ -4450,6 +4450,10 @@ h1, p, .title {
   transition: color .6s cubic-bezier(.65,.05,.36,1);
 }
 
+.title i {
+  transition: background-color .6s cubic-bezier(.65,.05,.36,1);
+}
+
 a {
   color: #FFFFFF;
 }
