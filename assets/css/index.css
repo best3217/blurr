@@ -163,7 +163,7 @@ section .title span {
 }
 
 .reveal-img {
-  aspect-ratio: 1/1
+  aspect-ratio: 0.8/1
 }
 
 .parallax-img {

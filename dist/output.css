@@ -4108,6 +4108,10 @@ textarea.form-control.is-invalid {
   margin-bottom: 0.75rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .ml-auto {
   margin-left: auto;
 }
@@ -4118,10 +4122,6 @@ textarea.form-control.is-invalid {
 
 .mb-0 {
   margin-bottom: 0px;
-}
-
-.mb-6 {
-  margin-bottom: 1.5rem;
 }
 
 .mt-12 {
@@ -4184,12 +4184,12 @@ textarea.form-control.is-invalid {
   height: 100%;
 }
 
-.w-full {
-  width: 100%;
-}
-
 .w-6 {
   width: 1.5rem;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .w-\[120\%\] {
@@ -4303,11 +4303,6 @@ textarea.form-control.is-invalid {
   background-color: rgb(39 35 44 / var(--tw-bg-opacity));
 }
 
-.bg-primary-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -4317,24 +4312,14 @@ textarea.form-control.is-invalid {
   padding: 0.5rem;
 }
 
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
 }
 
 .px-8 {
@@ -4352,9 +4337,8 @@ textarea.form-control.is-invalid {
   padding-bottom: 1.25rem;
 }
 
-.px-5 {
+.pl-5 {
   padding-left: 1.25rem;
-  padding-right: 1.25rem;
 }
 
 .pb-8 {
@@ -4363,10 +4347,6 @@ textarea.form-control.is-invalid {
 
 .pt-8 {
   padding-top: 2rem;
-}
-
-.pl-5 {
-  padding-left: 1.25rem;
 }
 
 .text-left {
@@ -4381,9 +4361,14 @@ textarea.form-control.is-invalid {
   font-family: HelveticaNeueCyr;
 }
 
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .text-4xl {
@@ -4396,32 +4381,18 @@ textarea.form-control.is-invalid {
   line-height: 1.5rem;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-\[20px\] {
   font-size: 20px;
 }
 
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.font-bold {
-  font-weight: 700;
 }
 
 .font-medium {
@@ -4432,8 +4403,16 @@ textarea.form-control.is-invalid {
   font-weight: 400;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .italic {
   font-style: italic;
+}
+
+.leading-13 {
+  line-height: 3.5rem;
 }
 
 .leading-\[2rem\] {
@@ -4444,16 +4423,17 @@ textarea.form-control.is-invalid {
   line-height: 3rem;
 }
 
-.leading-13 {
-  line-height: 3.5rem;
-}
-
 .leading-6 {
   line-height: 1.5rem;
 }
 
 .tracking-tight {
   letter-spacing: -0.03rem;
+}
+
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .text-primary-500 {
@@ -4464,11 +4444,6 @@ textarea.form-control.is-invalid {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .outline {
@@ -4643,7 +4618,7 @@ section .title span {
 }
 
 .reveal-img {
-  aspect-ratio: 1/1
+  aspect-ratio: 0.8/1
 }
 
 .parallax-img {
@@ -5069,16 +5044,16 @@ body.light-mode .cursor {
     margin-right: 0px;
   }
 
+  .sm\:mt-\[8rem\] {
+    margin-top: 8rem;
+  }
+
   .sm\:mb-0 {
     margin-bottom: 0px;
   }
 
   .sm\:mb-7 {
     margin-bottom: 1.75rem;
-  }
-
-  .sm\:mt-\[8rem\] {
-    margin-top: 8rem;
   }
 
   .sm\:grid {
@@ -5125,13 +5100,17 @@ body.light-mode .cursor {
     text-align: center;
   }
 
-  .sm\:text-\[64px\] {
-    font-size: 64px;
-  }
-
   .sm\:text-5xl {
     font-size: 3rem;
     line-height: 1;
+  }
+
+  .sm\:text-\[4rem\] {
+    font-size: 4rem;
+  }
+
+  .sm\:text-\[64px\] {
+    font-size: 64px;
   }
 
   .sm\:text-\[6rem\] {
@@ -5164,12 +5143,12 @@ body.light-mode .cursor {
     display: grid;
   }
 
-  .md\:w-3\/4 {
-    width: 75%;
-  }
-
   .md\:w-auto {
     width: auto;
+  }
+
+  .md\:w-3\/4 {
+    width: 75%;
   }
 
   .md\:w-9\/12 {
@@ -5213,16 +5192,16 @@ body.light-mode .cursor {
     font-size: 128px;
   }
 
-  .md\:leading-20 {
-    line-height: 6rem;
+  .md\:leading-25 {
+    line-height: 7.5rem;
   }
 
   .md\:leading-12 {
     line-height: 3rem;
   }
 
-  .md\:leading-25 {
-    line-height: 7.5rem;
+  .md\:leading-20 {
+    line-height: 6rem;
   }
 }
 

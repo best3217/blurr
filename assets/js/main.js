@@ -54,8 +54,8 @@ let header = document.querySelector("header");
 
 ScrollTrigger.create({
   trigger: "body",
-  start: "top 50%+=100px",
-  endTrigger: "body",
+  start: "top top",
+  endTrigger: "footer",
   toggleActions: "play reverse play reverse",
   end: "bottom bottom",
   onToggle: self => {
@@ -67,11 +67,11 @@ ScrollTrigger.create({
     if(self.direction == 1) {
       header.setAttribute("class", "down")
     }
-    if(self.direction == -1 && self.progress.toFixed(2)*1 < 0.99) {
+    if(self.direction == -1 && self.progress.toFixed(2)*1 < 1) {
       header.setAttribute("class", "up")
     }
 
-    if(self.progress < 0.1) {
+    if(self.progress <= 0.01) {
       header.removeAttribute('class', 'up')
     }
   }

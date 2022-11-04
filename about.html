@@ -1,352 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blurr-About</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-    <link href="./dist/output.css" rel="stylesheet" />
-  </head>
-  <body class="bg-dark">
-    <div class="container">
-        <header class="py-4 flex justify-between">
-            <div class="logo-brand">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blurr-About</title>
+
+  <link rel="stylesheet" href="./assets/font/stylesheet.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+  <link href="./dist/output.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.1/dist/locomotive-scroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+</head>
+
+<body class="bg-dark">
+  <div class="container">
+    <header>
+      <div class="container">
+        <div class="flex flex-wrap justify-between">
+          <div class="logo-brand flex items-center">
+            <a href="/index.html">
               <img src="./assets/img/Logo.svg">
+            </a>
+          </div>
+          <button id="toggle-button" data-collapse-toggle="navbar-default" type="button"
+            class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-default" aria-expanded="false">
+            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+          <div id="nav-toggle" class="items-center hidden w-full lg:block md:w-auto">
+            <div class="nav-wrapper">
+              <nav class="nav">
+                <a href="#" class="hover-this px-5 text-lg"><span>Lavori</span></a>
+                <a href="#" class="hover-this px-5 text-lg"><span>Cosa Facciamo</span></a>
+                <a href="#" class="hover-this px-5 text-lg"><span>Studio</span></a>
+                <a href="#" class="hover-this pl-5 text-lg"><span>Lavora con noi</span></a>
+                <div class="cursor"></div>
+              </nav>
             </div>
-            <div class="nav flex items-center">
-              <ul class="flex">
-                <li>
-                  <a href="#" class="px-2 text-xs">Lavori</a>
-                </li>
-                <li>
-                  <a href="#" class="px-2 text-xs">Cosa Facciamo</a>
-                </li>
-                <li>
-                  <a href="#" class="px-2 text-xs">Studio</a>
-                </li>
-              </ul>
-              <button class="px-4 py-2 bg-primary-500 font-dm text-xs font-bold ml-3">Contattaci</button>
-            </div>
-        </header>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div data-scroll-container>
+      <div class="container">
         <main>
-            <div class="container-xl">
-                <section id="section1">
-                    <div class="font-dm text-4xl md:text-6xl lg:text-8xl font-medium text-primary-500 md:leading-20 reveal-text">
-                        Frontend / Backend / Design / Assistenza
-                    </div>
-                    <div class="grid md:grid-cols-8 gap-4 mt-8 md:mt-[6rem]">
-                        <div class="col-span-3"></div>
-                        <div class="col-span-5">
-                            <div class="overflow-hidden">
-                                <p>Lavoriamo per numerose aziende che si occupano di prodotti digitali, siamo quì per aiutarti a sviluppare i progetti per i tuoi clienti, portiamo una serie di skills che daranno più valore ai tuoi servizi.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <div class="grid md:grid-cols-2 items-center gap-10 lg:gap-20">
-                        <div id="rectangle" class="relative">
-                          <span></span>
-                          <img src="./assets/img/Rectangle21.png" alt="Rectangle2" class="w-full">
-                        </div>
-                        <div>
-                          <div class="title flex gap-3 text-primary-500 text-base items-center overflow-hidden">
-                            <span>
-                              <i></i>
-                              Il nostro approccio
-                            </span>
-                          </div>
-                          <div class="overflow-hidden">
-                            <h1 class="font-medium text-primary-500 leading-[2rem] md:leading-12 mt-6">
-                                Un flusso ben definito per ridurre i tempi.
-                            </h1>
-                          </div>
-                          <div class="grid grid-cols-2 gap-5 md:gap-12 mt-6 md:mt-15">
-                            <div>
-                                <div class="overflow-hidden">
-                                    <p class="font-normal italic text-sm mb-3">01</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="font-medium mb-3">Comprendere</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="text-base">Prima di iniziare ogni progetto, cerchiamo di capire i requisiti, gli obbiettivi e le soluzioni migliori.</p>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="overflow-hidden">
-                                    <p class="font-normal italic text-sm mb-3">02</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="font-medium mb-3">Brainstorm</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="text-base">Cerchiamo idee e soluzioni per realizzare al meglio il progetto e le funzionalità necessarie.</p>
-                                </div>
-                            </div>
-                          </div>
-
-                          <div class="grid grid-cols-2 gap-5 lg:gap-12 mt-6 md:mt-15">
-                            <div>
-                                <div class="overflow-hidden">
-                                    <p class="font-normal italic text-sm mb-3">03</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="font-medium mb-3">Design</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="text-base">Cerchiamo di realizzare design seguento il trend del momento, mantendo una usabilità ottimale.</p>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="overflow-hidden">
-                                    <p class="font-normal italic text-sm mb-3">04</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="font-medium mb-3">Sviluppo</p>
-                                </div>
-                                <div class="overflow-hidden">
-                                    <p class="text-base">In base alle scelte fatte sviluppiamo il tuo progetto utilizzando le tecnologie del momento.</p>
-                                </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </section>
-
-                <section id="section3">
-                    <div class="sm:w-3/4 md:pl-[4rem]">
-                        <div class="title flex gap-3 text-primary-500 text-base items-center overflow-hidden">
-                            <span>
-                              <i></i>
-                              Nati con la voglia di creare il nuovo
-                            </span>
-                          </div>
-                          <div class="overflow-hidden">
-                            <h1 class="font-medium md:text-[80px] leading-[2rem] md:leading-20">Sviluppiamo siti web Wordpress con Integrazioni API e Plugin Custom</h1>
-                          </div>
-                    </div>
-                </section>
-
-                <section>
-                    <div class="md:text-[128px] text-center">White Label</div>
-                    <div class="sm:w-4/6 overflow-hidden mx-auto">
-                        <p class="text-left sm:text-center">I nostri progetti sono Whitelabel, quindi potrai presentare al tuo cliente il progetto brandizzato con la tua azienda.</p>
-                    </div>
-                </section>
-
-                <section id="section5">
-                    <div class="title flex gap-3 text-primary-500 text-base items-center overflow-hidden">
-                        <span>
-                          <i></i>
-                          Gestiamo i tuoi progetti
-                        </span>
-                    </div>
-                    <div class="overflow-hidden">
-                        <h1 class="font-medium text-primary-500 leading-[2rem] md:leading-12 mt-6">Se non vuoi romperti la testa ad aggiornare, mantenere e gestire i progetti web dei tuoi clienti lo possiamo fare noi per te.</h1>
-                    </div>
-                    <div class="md:w-3/4 ml-auto md:mt-[6rem] overflow-hidden">
-                        <h1 class="font-medium text-primary-500 leading-12 sm:leading-[4.5rem] mt-6 text-4xl sm:text-[64px]">
-                            Dominio / Hosting / Sicurezza / SSL / Backup Giornalieri / Email / CDN
-                        </h1>
-                    </div>
-                </section>
-
-                <section>
-                    <div class="overflow-hidden">
-                        <h1 class="font-medium text-4xl sm:text-5xl text-primary-500 leading-[2rem] md:leading-12 mb-5 md:mb-10">
-                            Domande
-                        </h1>
-                    </div>
-                    <div class="md:grid grid-flow-row md:grid-cols-12 md:gap-20">
-                        <div class="col-span-8">
-                            <div class="accordion border-t border-b border-primary-900" id="accordionExample">
-                                <div class="accordion-item">
-                                  <h2 class="accordion-header mb-0" id="headingOne">
-                                    <button 
-                                    class="py-4 relative flex items-center w-full transition focus:outline-none" 
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                                    aria-controls="collapseOne">
-                                        <div class="flex gap-5 md:gap-20 overflow-hidden items-center">
-                                            <p class="font-normal italic text-[20px]">01</p>
-                                            <p class="text-[20px] font-bold">Tempistiche per sviluppare un sito?</p>
-                                        </div>
-                                    </button>
-                                  </h2>
-                                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body sm:w-5/6 mb-6 ml-auto overflow-hidden">
-                                        <p>Questo dipende molto dalla dimensione del progetto ma in media ci impieghiamo dalle 3 alle 6 settimane ma non è raro che riusciamo a completarlo anche prima.</p>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion border-b border-primary-900" id="accordionExample">
-                                <div class="accordion-item">
-                                  <h2 class="accordion-header mb-0" id="headingTwo">
-                                    <button 
-                                    class="py-4 relative flex items-center w-full transition focus:outline-none collapsed" 
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                                    aria-controls="collapseTwo">
-                                        <div class="flex gap-5 md:gap-20 overflow-hidden items-center">
-                                            <p class="font-normal italic text-[20px]">01</p>
-                                            <p class="text-[20px] font-bold">Tempistiche per sviluppare un sito?</p>
-                                        </div>
-                                    </button>
-                                  </h2>
-                                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body sm:w-5/6 mb-6 ml-auto overflow-hidden">
-                                        <p>Questo dipende molto dalla dimensione del progetto ma in media ci impieghiamo dalle 3 alle 6 settimane ma non è raro che riusciamo a completarlo anche prima.</p>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion border-b border-primary-900" id="accordionExample">
-                                <div class="accordion-item">
-                                  <h2 class="accordion-header mb-0" id="headingThree">
-                                    <button 
-                                    class="py-4 relative flex items-center w-full transition focus:outline-none collapsed" 
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
-                                    aria-controls="collapseThree">
-                                        <div class="flex gap-5 md:gap-20 overflow-hidden items-center">
-                                            <p class="font-normal italic text-[20px]">01</p>
-                                            <p class="text-[20px] font-bold">Tempistiche per sviluppare un sito?</p>
-                                        </div>
-                                    </button>
-                                  </h2>
-                                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body sm:w-5/6 mb-6 ml-auto overflow-hidden">
-                                        <p>Questo dipende molto dalla dimensione del progetto ma in media ci impieghiamo dalle 3 alle 6 settimane ma non è raro che riusciamo a completarlo anche prima.</p>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion border-b border-primary-900" id="accordionExample">
-                                <div class="accordion-item">
-                                  <h2 class="accordion-header mb-0" id="headingFour">
-                                    <button 
-                                    class="py-4 relative flex items-center w-full transition focus:outline-none collapsed" 
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
-                                    aria-controls="collapseFour">
-                                        <div class="flex gap-5 md:gap-20 overflow-hidden items-center">
-                                            <p class="font-normal italic text-[20px]">01</p>
-                                            <p class="text-[20px] font-bold">Tempistiche per sviluppare un sito?</p>
-                                        </div>
-                                    </button>
-                                  </h2>
-                                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body sm:w-5/6 mb-6 ml-auto overflow-hidden">
-                                        <p>Questo dipende molto dalla dimensione del progetto ma in media ci impieghiamo dalle 3 alle 6 settimane ma non è raro che riusciamo a completarlo anche prima.</p>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion border-b border-primary-900" id="accordionExample">
-                                <div class="accordion-item">
-                                  <h2 class="accordion-header mb-0" id="headingFive">
-                                    <button 
-                                    class="py-4 relative flex items-center w-full transition focus:outline-none collapsed" 
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
-                                    aria-controls="collapseFive">
-                                        <div class="flex gap-5 md:gap-20 overflow-hidden items-center">
-                                            <p class="font-normal italic text-[20px]">01</p>
-                                            <p class="text-[20px] font-bold">Tempistiche per sviluppare un sito?</p>
-                                        </div>
-                                    </button>
-                                  </h2>
-                                  <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body sm:w-5/6 mb-6 ml-auto overflow-hidden">
-                                        <p>Questo dipende molto dalla dimensione del progetto ma in media ci impieghiamo dalle 3 alle 6 settimane ma non è raro che riusciamo a completarlo anche prima.</p>
-                                    </div>
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-span-4">
-                            <img src="./assets/img/Rectangle22.png" class="w-full" alt="rectagle">
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <div class="overflow-hidden">
-                      <h1 class="font-medium text-primary-500 leading-12 sm:leading-[4.5rem] mt-6 text-4xl sm:text-[64px] text-center">Parlaci del tuo prossimo <br>progetto.</h1>
-                    </div>
-                    <div class="mt-12 text-center">
-                      <button class="bg-white px-8 py-3 font-bold text-xs">Contattaci ora</button>
-                    </div>
-                </section>
+          <section id="section1" data-scroll class="h-screen flex justify-center flex-col">
+            <div
+              class="font-helvetica tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-medium text-primary-500 leading-13 md:leading-25 reveal-text">
+              Frontend / Backend / Design / Assistenza</div>
+            <div class="grid md:grid-cols-8 gap-4 mt-8 md:mt-[6rem]">
+              <div class="col-span-3"></div>
+              <div class="col-span-5">
+                <p>Lavoriamo per numerose aziende che si occupano di prodotti digitali, siamo quì per aiutarti a
+                  sviluppare i progetti per i tuoi clienti, portiamo una serie di skills che daranno più valore ai tuoi
+                  servizi.</p>
+              </div>
             </div>
-        </main>
-        <footer class="py-5">
-            <div class="container">
-              <div class="sm:grid grid-flow-row-dense sm:grid-cols-12 border-b border-primary-500 pb-8">
-                <div class="col-span-8 mb-5 sm:mb-0">
-                  <img src="./assets/img/Logo.svg" class="mx-auto sm:mx-0">
+          </section>
+
+          <section data-scroll>
+            <div class="grid md:grid-cols-2 items-center gap-10 lg:gap-20">
+              <div id="rectangle" class="relative reveal-img overflow-hidden">
+                <img src="./assets/img/Rectangle21.png" alt="Rectangle2" class="w-[120%] parallax-img">
+              </div>
+              <div>
+                <div class="title font-helvetica flex gap-3 text-primary-500 text-base items-center">
+                  <div class="overflow-hidden flex items-center">
+                    <i></i>
+                  </div>
                   <div class="overflow-hidden">
-                    <p class="sm:w-1/5 mt-5 text-center sm:text-left">
-                      Il tuo partner per il design e sviluppo
-                    </p>
+                    <span>Il nostro approccio</span>
                   </div>
                 </div>
-                <div class="col-span-2 text-center sm:text-left">
-                  <div class="overflow-hidden mb-4">
-                    <p class="text-white font-bold text-base">Links</p>
-                  </div>
-                  <ul>
-                    <li class="mb-4">
-                      <a href="#">Home</a>
-                    </li>
-                    <li class="mb-4">
-                      <a href="#">Cosa Facciamo</a>
-                    </li>
-                    <li class="mb-4">
-                      <a href="#">Studio</a>
-                    </li>
-                  </ul>
+                <div class="overflow-hidden">
+                  <h1 class="font-medium text-primary-500 leading-[2rem] md:leading-12 mt-6">Un flusso ben definito perridurre i tempi.</h1>
                 </div>
-                <div class="col-span-2 text-center sm:text-left mb-4">
-                  <div class="overflow-hidden">
-                    <p class="text-white font-bold text-base">Studio</p>
+                <div class="grid grid-cols-2 gap-5 md:gap-12 mt-6 md:mt-15">
+                  <div>
+                    <div class="overflow-hidden">
+                      <p class="font-normal italic text-sm mb-3">01</p>
+                    </div>
+                    <div class="overflow-hidden mb-3">
+                      <h2 class="font-medium text-2xl text-primary-500">Comprendere</h2>
+                    </div>
+                    <p class="text-base">Prima di iniziare ogni progetto, cerchiamo di capire i requisiti, gli
+                      obbiettivi e le soluzioni migliori.</p>
                   </div>
-                  <ul>
-                    <li class="mb-4">
-                      <a href="#">Via Valentini 9, 38060 Calliano (TN)</a>
-                    </li>
-                  </ul>
-                  <div class="overflow-hidden mb-4">
-                    <p class="text-white font-bold text-base">Contatti</p>
+                  <div>
+                    <div class="overflow-hidden">
+                      <p class="font-normal italic text-sm mb-3">02</p>
+                    </div>
+                    <div class="overflow-hidden">
+                      <p class="font-medium mb-3">Brainstorm</p>
+                    </div>
+                    <div class="overflow-hidden">
+                      <p class="text-base">Cerchiamo idee e soluzioni per realizzare al meglio il progetto e le
+                        funzionalità necessarie.</p>
+                    </div>
                   </div>
-                  <ul>
-                    <li class="mb-4">
-                      <a href="#">aryan@blurr.it</a>
-                    </li>
-                    <li class="mb-4">
-                      <a href="#">+39 3770935429</a>
-                    </li>
-                  </ul>
+                </div>
+
+                <div class="grid grid-cols-2 gap-5 lg:gap-12 mt-6 md:mt-15">
+                  <div>
+                    <div class="overflow-hidden">
+                      <p class="font-normal italic text-sm mb-3">03</p>
+                    </div>
+                    <div class="overflow-hidden">
+                      <p class="font-medium mb-3">Design</p>
+                    </div>
+                    <div class="overflow-hidden">
+                      <p class="text-base">Cerchiamo di realizzare design seguento il trend del momento, mantendo una
+                        usabilità ottimale.</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="overflow-hidden">
+                      <p class="font-normal italic text-sm mb-3">04</p>
+                    </div>
+                    <div class="overflow-hidden">
+                      <p class="font-medium mb-3">Sviluppo</p>
+                    </div>
+                    <div class="overflow-hidden">
+                      <p class="text-base">In base alle scelte fatte sviluppiamo il tuo progetto utilizzando le
+                        tecnologie del momento.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="section3" data-scroll>
+            <div class="sm:w-3/4 md:pl-[4rem]">
+              <div class="title font-helvetica flex gap-3 text-primary-500 text-base items-center mb-6">
+                <div class="overflow-hidden flex items-center">
+                  <i></i>
+                </div>
+                <div class="overflow-hidden">
+                  <span>
+                    Nati con la voglia di creare il nuovo
+                  </span>
                 </div>
               </div>
               <div class="overflow-hidden">
-                <p class="text-base pt-8 text-center sm:text-left">Copyright 2022 Blurr.it | p.va 02559530221</p>
+                <h1 class="font-medium md:text-[80px] leading-[2rem] md:leading-20">Sviluppiamo siti web Wordpress con
+                  Integrazioni API e Plugin Custom</h1>
               </div>
             </div>
-          </footer>
+          </section>
+
+          <section data-scroll>
+            <div class="md:text-[128px] text-center">White Label</div>
+            <div class="sm:w-4/6 mx-auto">
+              <p class="text-left sm:text-center">I nostri progetti sono Whitelabel, quindi potrai presentare al tuo
+                cliente il progetto brandizzato con la tua azienda.</p>
+            </div>
+          </section>
+
+          <section id="section5" data-scroll>
+            <div class="title font-helvetica flex gap-3 text-primary-500 text-base items-center">
+              <div class="overflow-hidden flex items-center">
+                <i></i>
+              </div>
+              <div class="overflow-hidden">
+                <span>
+                  Gestiamo i tuoi progetti
+                </span>
+              </div>
+            </div>
+            <div class="overflow-hidden">
+              <h1 class="font-medium text-primary-500 leading-[2rem] md:leading-12 mt-6">Se non vuoi romperti la testa ad aggiornare, mantenere e gestire i progetti web dei tuoi clienti lo possiamo fare noi per te.</h1>
+            </div>
+            <div class="md:w-3/4 ml-auto md:mt-[6rem] overflow-hidden">
+              <h1 class="font-medium text-primary-500 leading-12 sm:leading-[4.5rem] mt-6 text-4xl sm:text-[4rem]">Dominio / Hosting / Sicurezza / SSL / Backup Giornalieri / Email / CDN</h1>
+            </div>
+          </section>
+
+          <section data-scroll>
+            <div class="overflow-hidden">
+              <h1 class="font-medium text-4xl sm:text-5xl text-primary-500 leading-[2rem] md:leading-12 mb-5 md:mb-10">Domande</h1>
+            </div>
+            <div class="md:grid grid-flow-row md:grid-cols-12 md:gap-20">
+              <div class="col-span-8">
+                <div class="accordion border-t border-b border-primary-900" id="accordionExample">
+                  <div class="accordion-item">
+                    <div class="accordion-header mb-0" id="headingOne">
+                      <button class="py-4 relative flex items-center w-full transition focus:outline-none" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        <div class="flex gap-5 md:gap-20 overflow-hidden items-center">
+                          <span class="font-normal italic text-[20px] text-primary-500">01</span>
+                          <span class="text-[20px] font-bold text-primary-500">Tempistiche per sviluppare un sito?</span>
+                        </div>
+                      </button>
+                    </div>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body sm:w-5/6 mb-6 ml-auto overflow-hidden">
+                        <p>Questo dipende molto dalla dimensione del progetto ma in media ci impieghiamo dalle 3 alle 6
+                          settimane ma non è raro che riusciamo a completarlo anche prima.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion border-b border-primary-900" id="accordionExample">
+                  <div class="accordion-item">
+                    <div class="accordion-header mb-0" id="headingTwo">
+                      <button class="py-4 relative flex items-center w-full transition focus:outline-none collapsed"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                        aria-controls="collapseTwo">
+                        <div class="flex gap-5 md:gap-20 overflow-hidden items-center">
+                          <span class="font-normal italic text-[20px] text-primary-500">01</span>
+                          <span class="text-[20px] font-bold text-primary-500">Tempistiche per sviluppare un sito?</span>
+                        </div>
+                      </button>
+                    </div>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body sm:w-5/6 mb-6 ml-auto overflow-hidden">
+                        <p>Questo dipende molto dalla dimensione del progetto ma in media ci impieghiamo dalle 3 alle 6
+                          settimane ma non è raro che riusciamo a completarlo anche prima.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion border-b border-primary-900" id="accordionExample">
+                  <div class="accordion-item">
+                    <div class="accordion-header mb-0" id="headingThree">
+                      <button class="py-4 relative flex items-center w-full transition focus:outline-none collapsed"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                        aria-controls="collapseThree">
+                        <div class="flex gap-5 md:gap-20 overflow-hidden items-center">
+                          <span class="font-normal italic text-[20px] text-primary-500">01</sp>
+                          <span class="text-[20px] font-bold text-primary-500">Tempistiche per sviluppare un sito?</span>
+                        </div>
+                      </button>
+                    </div>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body sm:w-5/6 mb-6 ml-auto overflow-hidden">
+                        <p>Questo dipende molto dalla dimensione del progetto ma in media ci impieghiamo dalle 3 alle 6
+                          settimane ma non è raro che riusciamo a completarlo anche prima.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion border-b border-primary-900" id="accordionExample">
+                  <div class="accordion-item">
+                    <div class="accordion-header mb-0" id="headingFour">
+                      <button class="py-4 relative flex items-center w-full transition focus:outline-none collapsed"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                        aria-controls="collapseFour">
+                        <div class="flex gap-5 md:gap-20 overflow-hidden items-center">
+                          <span class="font-normal italic text-[20px] text-primary-500">01</span>
+                          <span class="text-[20px] font-bold text-primary-500">Tempistiche per sviluppare un sito?</span>
+                        </div>
+                      </button>
+                    </div>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body sm:w-5/6 mb-6 ml-auto overflow-hidden">
+                        <p>Questo dipende molto dalla dimensione del progetto ma in media ci impieghiamo dalle 3 alle 6
+                          settimane ma non è raro che riusciamo a completarlo anche prima.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion border-b border-primary-900" id="accordionExample">
+                  <div class="accordion-item">
+                    <div class="accordion-header mb-0" id="headingFive">
+                      <button class="py-4 relative flex items-center w-full transition focus:outline-none collapsed"
+                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
+                        aria-controls="collapseFive">
+                        <div class="flex gap-5 md:gap-20 overflow-hidden items-center">
+                          <span class="font-normal italic text-[20px] text-primary-500">01</span>
+                          <span class="text-[20px] font-bold text-primary-500">Tempistiche per sviluppare un sito?</span>
+                        </div>
+                      </button>
+                    </div>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body sm:w-5/6 mb-6 ml-auto overflow-hidden">
+                        <p>Questo dipende molto dalla dimensione del progetto ma in media ci impieghiamo dalle 3 alle 6
+                          settimane ma non è raro che riusciamo a completarlo anche prima.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-span-4">
+                <img src="./assets/img/Rectangle22.png" class="w-full" alt="rectagle">
+              </div>
+            </div>
+          </section>
+
+          <section data-scroll>
+            <div class="overflow-hidden text-center">
+              <h1 class="font-medium text-primary-500 leading-12 sm:leading-[4.5rem] mt-6 text-4xl sm:text-[64px] text-center inline-block">Parlaci del tuo prossimo <br>progetto.</h1>
+            </div>
+            <div class="mt-12 text-center">
+              <button class="bg-white px-8 py-3 font-bold text-lg">Contattaci ora</button>
+            </div>
+          </section>
+        </main>
+        <footer class="sm:mt-[8rem] py-5">
+          <div class="container">
+            <div class="sm:grid grid-flow-row-dense sm:grid-cols-12 border-b border-primary-500 pb-8">
+              <div class="col-span-8 mb-5 sm:mb-0">
+                <img src="./assets/img/Logo.svg" class="mx-auto sm:mx-0">
+                <span class="sm:w-1/5 text-center sm:text-left mt-5 text-2xl text-primary-500 block">
+                  Il tuo partner per il design e sviluppo
+                </span>
+              </div>
+              <div class="col-span-2 text-center sm:text-left">
+                <span class="text-white font-bold text-base mb-4 block">Links</span>
+                <ul>
+                  <li class="mb-4">
+                    <a href="#">Home</a>
+                  </li>
+                  <li class="mb-4">
+                    <a href="#">Cosa Facciamo</a>
+                  </li>
+                  <li class="mb-4">
+                    <a href="#">Studio</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-span-2 text-center sm:text-left">
+                <span class="text-white font-bold text-base block mb-4">Studio</span>
+                <ul>
+                  <li class="mb-7">
+                    <a href="#">Via Valentini 9, 38060 Calliano (TN)</a>
+                  </li>
+                </ul>
+                <span class="text-white font-bold text-base mb-4 block">Contatti</span>
+                <ul>
+                  <li class="mb-4">
+                    <a href="#">aryan@blurr.it</a>
+                  </li>
+                  <li class="mb-4">
+                    <a href="#">+39 3770935429</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <span class="text-base pt-8 text-center sm:text-left block text-primary-500">Copyright 2022 Blurr.it | p.va
+              02559530221</sp>
+          </div>
+        </footer>
+      </div>
     </div>
-  </body>
-  <script src="./assets/js/main.js"></script>
+  </div>
+</body>
+<script src="./assets/js/main.js"></script>
+
 </html>
