@@ -1,32 +1,38 @@
 
-
 gsap.registerPlugin(ScrollTrigger);
 
-
-// --- SETUP START ---
-// Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
-const locoScroll = new LocomotiveScroll({
-  el: document.querySelector("[data-scroll-container]"),
-  smooth: true
-});
-// each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
-locoScroll.on("scroll", ScrollTrigger.update);
-
-// tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
-ScrollTrigger.scrollerProxy("[data-scroll-container]", {
-  scrollTop(value) {
-    return arguments.length ? locoScroll.scrollTo(value, {duration: 0, disableLerp: true}) : locoScroll.scroll.instance.scroll.y;
-  }, // we don't have to define a scrollLeft because we're only scrolling vertically.
-  getBoundingClientRect() {
-    return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-  },
-  // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-  pinType: document.querySelector("[data-scroll-container]").style.transform ? "transform" : "fixed"
+ScrollTrigger.defaults({
+  scroller: '[data-scroll-container]',
+  markers: false
 });
 
-// each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-ScrollTrigger.defaults({ scroller: "[data-scroll-container]" });
+var scroll = new LocomotiveScroll( {
+    el: document.querySelector( '[data-scroll-container]' ),
+    smooth: true,
+    multiplier: 1.0,
+    getDirection: true,
+});
+
+// Update scroll position
+scroll.on( 'scroll', ( instance ) => {
+    ScrollTrigger.update();
+    document.documentElement.setAttribute( 'data-scrolling', instance.direction );
+});
+
+// Scroll position for ScrollTrigger
+ScrollTrigger.scrollerProxy( '[data-scroll-container]', {
+    scrollTop( value ) {
+        return arguments.length ? scroll.scrollTo( value, 0, 0 ) : scroll.scroll.instance.scroll.y;
+    },
+    getBoundingClientRect() {
+        return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+    },
+    pinType: document.querySelector( '[data-scroll-container]' ).style.transform ? "transform" : "fixed"
+} );
+
+
+ScrollTrigger.addEventListener( 'refresh', () => scroll.update() );
+ScrollTrigger.refresh();
 
 
 let body = document.querySelector("body")
@@ -147,8 +153,7 @@ window.addEventListener("load", function () {
     const words = element.querySelectorAll(".word");
     let tl = gsap.timeline({
       scrollTrigger: {
-        trigger: element,
-        toggleActions: "restart none none reset"
+        trigger: element
       }
     });
     tl.set(element, { autoAlpha: 1 });
@@ -167,18 +172,19 @@ const titles = document.querySelectorAll('.title');
 const h1Tags = document.querySelectorAll('h1');
 const h2Tags = document.querySelectorAll('h2');
 const pTags = document.querySelectorAll('p');
+splitLines(".title div")
 
 titles.forEach((element) => {
   let icon = element.querySelector("i")
-  let span = element.querySelector("span")
+  let span = element.querySelector("span.words")
   let spanParent = span.parentNode
   let titleTl = gsap.timeline({
     scrollTrigger: {
       trigger: element,
     }
   })
-  titleTl.from([spanParent, span, icon], 1, {
-    xPercent: gsap.utils.wrap([-100, 100]),
+  titleTl.from([spanParent, icon], 1, {
+    width: 0,
     ease: Power2.out,
   })
 })
@@ -205,7 +211,6 @@ h1Tags.forEach((element) => {
   let h1TagsTl = gsap.timeline({
     scrollTrigger: {
       trigger: element,
-      toggleActions: "restart none none reset"
     }
   });
   h1TagsTl.set(element, { autoAlpha: 1 });
@@ -220,8 +225,7 @@ h1Tags.forEach((element) => {
 h2Tags.forEach((element) => {
   let h2TagsTl = gsap.timeline({
     scrollTrigger: {
-      trigger: element,
-      toggleActions: "restart none none reset"
+      trigger: element
     }
   });
 
@@ -256,7 +260,7 @@ revealImg.forEach((container) => {
 });
 
 let header = document.querySelector("header");
-let logo = header.querySelector("img")
+let logo = header.querySelector(".logo-brand");
 let links = header.querySelectorAll("span");
 let headerTl = gsap.timeline({
   scrollTrigger: {
@@ -298,8 +302,14 @@ gsap.to(".parallax-img", {
         yMove = y / height * (move * 2) - move;
 
         span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+        if(e.type === "mousemove") {
+          cursor.style.transform = 'translate(-50%, -50%) scale(8)';
+        }
 
-        if (e.type === 'mouseleave') span.style.transform = '';
+        if (e.type === 'mouseleave') {
+          span.style.transform = '';
+          cursor.style.transform = "none"
+        }
   };
 
   const editCursor = e => {

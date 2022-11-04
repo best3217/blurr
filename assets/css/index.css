@@ -44,8 +44,8 @@ header.up a span {
   color: theme("colors.dark");
 }
 
-header.up img {
-  filter: blur(0.6px) brightness(0.4) grayscale(0.45) contrast(0.8) hue-rotate(8deg) invert(0.2);
+header.up .logo-brand svg path {
+  fill: theme("colors.dark");
 }
 
 body.light-mode header.up {
@@ -56,8 +56,8 @@ body.light-mode header.up a span {
   color: theme("colors.primary.500");
 }
 
-body.light-mode header.up img {
-  filter: none;
+body.light-mode header.up svg path {
+  fill: theme("colors.primary.500");
 }
 
 
@@ -102,11 +102,6 @@ header span {
         display: inline-block;
   }
 }
-
-.hover-this:hover ~ .cursor {
-  transform: translate(-50%, -50%) scale(8);
-}
-
 
 h1, p, .title, h2 {
   transition: color .6s cubic-bezier(.65,.05,.36,1);
@@ -154,6 +149,15 @@ button {
 
 .title i, .title span {
   display: inline-block !important;
+  margin: 0 1px;
+}
+
+.title span.words {
+  white-space: nowrap;
+}
+
+.title div {
+  display: inherit;
 }
 
 section .title span {
@@ -193,14 +197,14 @@ p {
     @apply font-helvetica
 }
 
-.logo-brand img {
+.logo-brand svg {
   width: 77px;
   height: 24px;
-  transition: filter .4s cubic-bezier(.65,.05,.36,1);
+  transition: opacity 0.4s cubic-bezier(.65,.05,.36,1);
 }
 
-.logo-brand img:hover {
-  filter: blur(0.6px) brightness(0.4) grayscale(0.45) contrast(0.8) hue-rotate(8deg) invert(0.2);
+.logo-brand svg:hover {
+  opacity: 0.5;
 }
 
 .logo-section {

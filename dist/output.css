@@ -4268,6 +4268,10 @@ textarea.form-control.is-invalid {
   gap: 2rem;
 }
 
+.gap-\[6px\] {
+  gap: 6px;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -4278,6 +4282,14 @@ textarea.form-control.is-invalid {
 
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .border-t {
@@ -4306,6 +4318,10 @@ textarea.form-control.is-invalid {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
 
 .p-2 {
@@ -4502,8 +4518,8 @@ header.up a span {
   color: #27232C;
 }
 
-header.up img {
-  filter: blur(0.6px) brightness(0.4) grayscale(0.45) contrast(0.8) hue-rotate(8deg) invert(0.2);
+header.up .logo-brand svg path {
+  fill: #27232C;
 }
 
 body.light-mode header.up {
@@ -4514,8 +4530,8 @@ body.light-mode header.up a span {
   color: #FFFFFF;
 }
 
-body.light-mode header.up img {
-  filter: none;
+body.light-mode header.up svg path {
+  fill: #FFFFFF;
 }
 
 .hover-this {
@@ -4557,10 +4573,6 @@ header span {
     padding: 20px 0;
     display: inline-block;
   }
-}
-
-.hover-this:hover ~ .cursor {
-  transform: translate(-50%, -50%) scale(8);
 }
 
 h1, p, .title, h2 {
@@ -4609,6 +4621,15 @@ button {
 
 .title i, .title span {
   display: inline-block !important;
+  margin: 0 1px;
+}
+
+.title span.words {
+  white-space: nowrap;
+}
+
+.title div {
+  display: inherit;
 }
 
 section .title span {
@@ -4648,14 +4669,14 @@ p {
   font-family: HelveticaNeueCyr
 }
 
-.logo-brand img {
+.logo-brand svg {
   width: 77px;
   height: 24px;
-  transition: filter .4s cubic-bezier(.65,.05,.36,1);
+  transition: opacity 0.4s cubic-bezier(.65,.05,.36,1);
 }
 
-.logo-brand img:hover {
-  filter: blur(0.6px) brightness(0.4) grayscale(0.45) contrast(0.8) hue-rotate(8deg) invert(0.2);
+.logo-brand svg:hover {
+  opacity: 0.5;
 }
 
 .logo-section {
