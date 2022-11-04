@@ -29,11 +29,12 @@ header {
   width: 100%;
   padding: 25px 0;
   z-index: 999;
-  transition: transform .8s ease,background-color .4s ease;
+  transition: .3s ease, background-color .4s ease;
 }
 
 header.down {
-  transform: translateY(calc(-100% - 60px));
+  /* transform: translateY(calc(-100% - 60px)); */
+  top: -60px;
 }
 
 header.up {
